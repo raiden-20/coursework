@@ -1,0 +1,9 @@
+[submodule "go-app"]
+	path = go-app
+	url = https://github.com/raiden-20/go-app.git
+[submodule "python-app"]
+	path = python-app
+	url = https://github.com/raiden-20/python-app.git
+[submodule "java-app"]
+	path = java-app
+	url = https://github.com/raiden-20/java-app.git
