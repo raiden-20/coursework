@@ -1,0 +1,9 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: keycloak-configmap
+data:
+  KC_DB: postgres
+  KC_DB_URL: jdbc:postgresql://db-service:5432/keycloak
+  KC_DB_USERNAME: keycloak_pg_user_secret
+  KEYCLOAK_ADMIN: admin_secret

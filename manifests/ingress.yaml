@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lindero-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: lindero.example
+      http:
+        paths:
+#          - path: /
+#            backend:
+#              service:
+#                name: frontend-service
+#                port:
+#                  number: 3000
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 8000
+#          - pathType: Prefix
+#            path: /picture/
+#            backend:
+#              service:
+#                name: minio-service
+#                port:
+#                  number: 9000

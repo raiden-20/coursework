@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minio
+  template:
+    metadata:
+      labels:
+        app: minio
+    spec:
+      containers:
+        - image: minio/minio:latest
+          name: minio
+          command: [ "minio" ]
+          args: ["server", "~/minio", "--console-address", ":9001"]
+          envFrom:
+            - configMapRef:
+                name: backend-configmap
+          ports:
+            - containerPort: 9000

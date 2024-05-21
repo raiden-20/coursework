@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: gallery-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gallery-db
+  template:
+    metadata:
+      labels:
+        app: gallery-db
+    spec:
+      containers:
+        - name: gallery-db
+          image: postgres:14
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: POSTGRES_PASSWORD
+          volumeMounts:
+            - name: init-db
+              mountPath: /docker-entrypoint-initdb.d/init.sql
+              readOnly: true
+      volumes:
+        - name: init-db
+          hostPath:
+            path: /minikubeContainer/database/init/init.sql
+            type: File
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 200Mi

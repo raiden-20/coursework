@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - image: raiden20/gallery_frontend:1.1
+          name: frontend
+          envFrom:
+            - configMapRef:
+                name: frontend-configmap
+          ports:
+            - containerPort: 3000
