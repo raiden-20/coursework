@@ -4,7 +4,7 @@ metadata:
   name: frontend-configmap
 data:
   KEYCLOAK_CLIENT_ID: frontend
-  KEYCLOAK_CLIENT_SECRET: 1LqZnZS2ksjtAWcEwBjZRJMf9UXJod5K
+  KEYCLOAK_CLIENT_SECRET: sngzklG22OmHwnhmz8OqBVGfw4UkY7cH
   KEYCLOAK_ISSUER: http://keycloak-service:8080/realms/online_gallery
   NEXTAUTH_URL: http://localhost:3000
   NEXTAUTH_SECRET: my-own-secret-189656-haha

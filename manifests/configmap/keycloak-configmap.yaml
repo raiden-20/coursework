@@ -7,3 +7,5 @@ data:
   KC_DB_URL: jdbc:postgresql://db-service:5432/keycloak
   KC_DB_USERNAME: keycloak_pg_user_secret
   KEYCLOAK_ADMIN: admin_secret
+  KEYCLOAK_ADMIN_PASSWORD: admin_secret
+  KC_DB_PASSWORD: keycloak_pg_pass_secret

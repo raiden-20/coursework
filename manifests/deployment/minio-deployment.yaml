@@ -19,6 +19,6 @@ spec:
           args: ["server", "~/minio", "--console-address", ":9001"]
           envFrom:
             - configMapRef:
-                name: backend-configmap
+                name: minio-configmap
           ports:
             - containerPort: 9000

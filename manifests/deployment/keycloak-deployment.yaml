@@ -20,16 +20,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: keycloak-configmap
-          env:
-            - name: KEYCLOAK_ADMIN_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-secret
-                  key: KEYCLOAK_ADMIN_PASSWORD
-            - name: KC_DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: keycloak-secret
-                  key: KC_DB_PASSWORD
           ports:
             - containerPort: 8080

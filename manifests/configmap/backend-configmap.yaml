@@ -15,5 +15,5 @@ data:
   JWT_ISSUER: http://keycloak-service:8080/realms/online_gallery
   JWK_SER: http://keycloak-service:8080/realms/online_gallery/protocol/openid-connect/certs
   MINIO_ROOT_PASSWORD: mpassword
-  KEYCLOAK_SECRET: 2Jn834S1GSdpzLQmx7n9n9geNNxi9YM6
+  KEYCLOAK_SECRET: lRp81bIMZdZpOI8LFU8wrn4Gxj9IoSXf
   KEYCLOAK_PASSWORD: "123456789"

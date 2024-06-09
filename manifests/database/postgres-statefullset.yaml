@@ -33,7 +33,7 @@ spec:
       volumes:
         - name: init-db
           hostPath:
-            path: /minikubeContainer/database/init/init.sql
+            path: /minikubeContainer/database/init.sql
             type: File
   volumeClaimTemplates:
     - metadata:
