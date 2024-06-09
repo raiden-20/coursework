@@ -1,0 +1,172 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$one-post-photo-height: 90vh;
+$one-post-photo-width: 90vh;
+
+.main {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+}
+
+.header_buttons {
+  display: flex;
+  gap: $gap-s;
+}
+
+.footer_buttons {
+  display: flex;
+  gap: $gap-xl;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-l;
+}
+
+.button {
+  display: flex;
+  gap: $gap-xxs;
+  font-weight: $weight;
+
+  img {
+    width: $img_button-width;
+  }
+}
+
+.one_post {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+
+  .one_post_img {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .one_post_title {
+    font-size: $font-size-l;
+    font-weight: $weight;
+  }
+
+  .one_post_date {
+    display: grid;
+    color: $grey-date;
+
+    text-align: end;
+  }
+}
+
+.one_post_opened_photo {
+  position: relative;
+  max-height: $one-post-photo-height;
+  max-width: $one-post-photo-width;
+  object-fit: cover;
+
+  z-index: $z-index-menu;
+}
+
+.border {
+  border-bottom: 1px solid $grey_border;
+  padding-bottom: $padding-48;
+}
+
+.button_close {
+  position: absolute;
+  display: grid;
+  justify-self: end;
+  align-self: start;
+
+  padding: $gap-xxl2 $gap-xxl2 0 0;
+
+  z-index: $z-index-menu;
+}
+
+.button_next {
+  position: absolute;
+  display: grid;
+  justify-self: end;
+
+  padding-right: $gap-xxl2;
+
+  z-index: $z-index-menu;
+}
+
+.button_prev {
+  position: absolute;
+  display: grid;
+  justify-self: start;
+
+  padding-left: $gap-xxl2;
+
+  z-index: $z-index-menu;
+}
+
+.footer_stretch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p {
+  color: $grey-date;
+}
+
+.settings_button {
+  display: none;
+}
+
+
+@media screen and (orientation: portrait) {
+  .header_buttons {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .button {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-xxs;
+    font-weight: $weight;
+
+    img {
+      width: $img_button-width;
+    }
+  }
+
+  .one_post {
+    .one_post_title {
+      font-size: $font-size-l0;
+    }
+  }
+
+  .create_post {
+    display: none;
+  }
+
+  .settings_button {
+    display: flex;
+  }
+
+  .footer_buttons {
+    display: grid;
+    gap: $gap-s;
+
+    button {
+      height: min-content;
+      justify-content: start;
+    }
+  }
+
+  .one_post_opened_photo {
+    width: 100%;
+    object-fit: cover;
+
+    z-index: $z-index-menu;
+  }
+}

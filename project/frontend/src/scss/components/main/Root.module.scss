@@ -1,0 +1,38 @@
+@import "@/scss/globals/main_values";
+
+
+.page {
+  display: grid;
+  width: 100%;
+}
+
+.mobile_nav {
+  display: none;
+}
+
+.root {
+  width: $width;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  row-gap: $gap-s;
+  justify-self: center;
+  min-height: 100vh;
+
+  padding: $main-padding;
+}
+
+@media screen and (max-width: $width) {
+  .root {
+    width: 100%;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .mobile_nav {
+    display: flex;
+  }
+
+  .desktop_nav {
+    display: none;
+  }
+}

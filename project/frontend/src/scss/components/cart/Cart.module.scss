@@ -1,0 +1,151 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$buy-data-width: 280px;
+
+.root {
+  height: 100%;
+  padding: $padding-s;
+
+  display: grid;
+  grid-template-rows: min-content max-content auto;
+  gap: $gap-xxl;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.top_buttons_section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $gap-s;
+
+  .top_button_checkbox {
+    height: min-content;
+    display: flex;
+    gap: $gap-xs;
+
+    img, div {
+      display: grid;
+      align-self: center;
+    }
+  }
+
+  .top_button_delete {
+    height: min-content;
+    display: flex;
+    gap: $gap-xxxxs;
+
+    img, div {
+      display: grid;
+      align-self: center;
+    }
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: $gap-xxl;
+}
+
+.arts {
+  height: 65vh;
+
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxl;
+  overflow-y: auto;
+
+  position: relative;
+}
+
+.arts::-webkit-scrollbar {
+  width: 0;
+}
+
+.buy_section {
+  background-color: $grey_bg-settings;
+  border-radius: $elements-radius;
+  padding: $section-padding-s;
+
+  width: $buy-data-width;
+  height: min-content;
+
+  display: grid;
+  gap: $gap-l;
+
+
+  .buy_data {
+
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+
+    .total_text , .price_text{
+      font-size: $font-size-l;
+    }
+
+    .price_text {
+      font-weight: $weight;
+    }
+  }
+}
+
+.no_elements {
+  text-align: center;
+  color: $grey-date;
+}
+
+@media screen and (orientation: portrait) {
+
+  .root {
+    padding: 0;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto min-content;
+    gap: $gap-xxl;
+  }
+
+  .buy_section {
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: $padding-16-0-0-0;
+    box-shadow: $shadow-top;
+    background: none;
+    border-radius: 0;
+
+    height: min-content;
+
+    display: grid;
+    align-items: end;
+
+    .buy_data {
+
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      gap: $gap-s;
+
+      .total_text , .price_text{
+        font-size: $font-size-l;
+      }
+
+      .price_text {
+        font-weight: $weight;
+      }
+    }
+  }
+
+  .arts {
+    height: 100%;
+    overflow: hidden;
+  }
+}

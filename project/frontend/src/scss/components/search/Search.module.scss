@@ -1,0 +1,91 @@
+@import '@/scss/globals/main_values';
+
+$img-size: 19px;
+$one-element-img-size: 70px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+}
+
+.root_main {
+  display: flex;
+  flex-flow: column;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  gap: $gap-xs;
+
+  align-items: center;
+
+
+  .img {
+    width: $img-size;
+    height: $img-size;
+  }
+
+  .input {
+    border: none;
+    padding: 0;
+
+    width: auto;
+  }
+}
+
+.main {
+  margin-top: $gap-s;
+}
+
+.nav {
+  height: min-content;
+  padding: 0;
+}
+
+.one_element {
+  cursor: pointer;
+  padding: $padding-7;
+
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  gap: $gap-xxs;
+
+  .one_element_photo {
+    cursor: pointer;
+
+    width: $one-element-img-size;
+    height: $one-element-img-size;
+
+    object-fit: cover;
+
+    border-radius: $elements-radius;
+  }
+
+  .one_element_name {
+    cursor: pointer;
+    font-size: $font-size-l;
+    font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .nav {
+    width: calc(100vw - 2 * $padding-24);
+    overflow-x: auto;
+
+    li {
+      margin: $input-padding;
+    }
+  }
+
+  .one_element {
+
+    .one_element_name {
+      cursor: pointer;
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
+  }
+}

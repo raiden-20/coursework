@@ -1,0 +1,202 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$who-buy-size: 59px;
+$who-buy-img-size: 35px;
+
+$star-width: 197px;
+
+$blur: 30px;
+
+.root {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: $gap-s;
+  row-gap: $gap-xxl;
+}
+
+.img_section {
+  position: relative;
+  display: grid;
+}
+
+.img_border {
+  display: grid;
+  overflow: hidden;
+  border-radius: $radius-xm;
+}
+
+.one_work {
+  * {
+    cursor: pointer;
+  }
+
+  width: $one-work-width;
+
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xs;
+
+  .one_work_img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    border-radius: $radius-xm;
+  }
+
+  .one_work_img_not_available {
+    position: relative;
+    width: 100%;
+
+    border-radius: $radius-xm;
+    filter: blur($blur);
+  }
+
+  .one_work_names {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-xxxxxs;
+  }
+
+  .one_work_weight {
+    font-weight: $weight;
+  }
+}
+
+.zamok {
+  position: absolute;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  justify-items: center;
+  row-gap: $gap-l1;
+
+  div {
+    color: $white-color;
+    font-weight: $weight;
+  }
+}
+
+.create_art_button {
+  display: none;
+}
+
+.who_buy_section {
+  position: absolute;
+  min-width: $who-buy-size;
+  height: $who-buy-size;
+  border-radius: $radius-xm 0;
+
+  background-color: $grey-who;
+
+
+}
+
+.star_section {
+  max-width: $star-width;
+  border-radius: 0 $radius-xm;
+
+  display: grid;
+  align-self: end;
+}
+
+.who_buy_data {
+  padding: $padding-12;
+
+  display: flex;
+
+  justify-self: start;
+  align-self: start;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: $gap-xxs;
+
+  color: $white-color;
+
+  img {
+    width: $who-buy-img-size;
+    height: $who-buy-img-size;
+    object-fit: cover;
+
+    border-radius: $elements-radius;
+
+    display: grid;
+    align-self: center;
+  }
+
+  div {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: $font-size-xs;
+    font-weight: $weight-700;
+  }
+}
+
+.who_buy_name_hide {
+  display: none;
+}
+
+.auction_time_section {
+  font-size: $font-size-l0;
+}
+
+.auction_active {
+  color: $active;
+  font-weight: $weight;
+}
+
+.auction_no_active {
+  color: $grey-date;
+}
+
+@media screen and (orientation: portrait) {
+  .root {
+    display: grid;
+  }
+  .one_work {
+    width: 100%;
+  }
+
+  .create_art_button {
+    position: fixed;
+
+    display: grid;
+    justify-self: end;
+    bottom: 100px;
+    right: 10px;
+
+    img {
+      width: 100px;
+    }
+
+  }
+}
+
+@media screen and (min-width: 500px) and (orientation: portrait){
+  .create_art_button {
+    img {
+      width: 90px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+  .create_art_button {
+    img {
+      width: 70px;
+    }
+
+  }
+}

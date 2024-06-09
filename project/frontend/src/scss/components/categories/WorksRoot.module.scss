@@ -1,0 +1,29 @@
+@import "@/scss/globals/main_values";
+
+$filters-button-gap: 8px;
+
+.root {
+  display: flex;
+  flex-flow: column;
+
+  gap: $gap-l1;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  font-weight: $weight;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  .filters_button {
+    height: min-content;
+
+    display: flex;
+    gap: $gap-xxxs;
+
+    font-weight: $weight;
+  }
+}

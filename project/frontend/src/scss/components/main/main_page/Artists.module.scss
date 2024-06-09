@@ -1,0 +1,98 @@
+@import "@/scss/globals/main_values";
+
+$img-size: 325px;
+$name-section-height: 51px;
+
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-xxl2;
+}
+
+.one_artist {
+  position: relative;
+  display: grid;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+.one_artist_img {
+  width: $img-size;
+  height: $img-size;
+  object-fit: cover;
+
+  border-radius: $radius-20;
+}
+
+.one_artist_name_section {
+  position: absolute;
+  display: grid;
+  justify-self: start;
+  align-self: end;
+  align-items: center;
+  left: $section-padding-s;
+  bottom: $section-padding-s;
+
+  max-width: 100%;
+  height: $name-section-height;
+
+  background-color: $white-color;
+  border-radius: $radius-20;
+
+  div {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding: $main-padding;
+    font-size: $font-size-xxl;
+    font-weight: $weight;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .one_artist_img {
+    width: $img-size / 1.4;
+    height: $img-size / 1.4;
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+  .ul {
+    gap: $gap-xxl;
+  }
+
+  .one_artist_img {
+    width: $img-size / 1.5;
+    height: $img-size / 1.5;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .ul {
+    gap: $gap-l2;
+  }
+
+  .one_artist_img {
+    width: $img-size / 1.8;
+    height: $img-size / 1.8;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .ul {
+    gap: $gap-l;
+  }
+
+  .one_artist_img {
+    width: $img-size / 2;
+    height: $img-size / 2;
+  }
+}

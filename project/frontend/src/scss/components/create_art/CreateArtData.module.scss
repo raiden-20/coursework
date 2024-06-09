@@ -1,0 +1,144 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+
+.root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxxl;
+}
+
+.section_root {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+
+  .header {
+    font-size: $font-size-l;
+    font-weight: $weight;
+  }
+
+  textarea {
+    border-radius: $elements-radius;
+    min-height: $textarea-height;
+  }
+}
+
+.inputs_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap-s;
+
+  input {
+    width: 100%;
+  }
+}
+
+.footer {
+  width: 100%;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: min-content auto;
+  column-gap: $gap-xs;
+
+  justify-items: start;
+}
+
+.footer_add_data {
+  display: flex;
+  gap: $gap-xs;
+}
+
+.footer_private {
+  word-break: break-word;
+}
+
+.hover_section {
+  position: absolute;
+
+  right: -80px;
+  bottom: -100px;
+
+  width: $hover-section-width;
+
+  padding: $section-padding-s;
+  border-radius: $radius-m;
+
+  background-color: $white-color;
+  box-shadow: 0 0 10px 0 $shadow-color;
+  z-index: $z-index-up;
+
+  display: grid;
+
+  .add_text {
+    font-size: $font-size-xs;
+    line-height: 20px;
+  }
+}
+
+.button {
+  width: max-content;
+}
+
+.button_add {
+  width: min-content;
+}
+
+.button_img {
+  width: max-content;
+  display: flex;
+  gap: $gap-xxs;
+}
+
+.hidden {
+  display: none;
+}
+
+.add_section {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  gap: $gap-s;
+
+  padding-bottom: $gap-s;
+}
+
+.add_section_ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-s;
+}
+
+.one_add {
+  width: max-content;
+  background-color: $grey_bg-settings;
+  color: $grey-tag;
+
+  padding: $padding-2;
+  border-radius: $elements-radius;
+
+  display: flex;
+  gap: $gap-xxs;
+  align-items: center;
+}
+
+.section_input {
+  position: relative;
+  z-index: $z-index-middle;
+}
+
+@media screen and (orientation: portrait) {
+  .inputs_section {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .section_root {
+    .header {
+      font-size: $font-size-l0;
+      font-weight: $weight;
+    }
+  }
+}

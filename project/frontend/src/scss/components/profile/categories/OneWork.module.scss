@@ -1,0 +1,204 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+.root {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: $gap-s;
+}
+
+.photo_section {
+  width: $photo-section-width;
+  height: 80vh;
+
+  display: flex;
+  flex-flow: column;
+  gap: $gap-l1;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .one_photo {
+    width: 100%;
+  }
+}
+
+.photo_section::-webkit-scrollbar {
+  width: 0;
+}
+
+.art_info {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column;
+  gap: $gap-l1;
+}
+
+.auctions_gap {
+  gap: $gap-xxxl;
+}
+
+.auction_buttons_section {
+  display: grid;
+  row-gap: $gap-s;
+}
+
+.art_table {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxxs;
+}
+
+.art_info_header {
+  display: flex;
+  flex-flow: column;
+  gap: $gap-xxxxxs;
+
+  .art_artist {
+    font-size: $font-size-l;
+    font-weight: $weight;
+  }
+
+  .art_name {
+    font-style: italic;
+  }
+}
+
+.art_price {
+  font-size: $font-size-l;
+  font-weight: $weight;
+}
+
+.add_to_cart {
+  width: 100%;
+  text-align: center;
+}
+
+.details_section {
+
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: $gap-xl;
+}
+
+.materials_ul {
+  display: flex;
+  gap: $gap-xxxxxs;
+  flex-wrap: wrap;
+}
+
+.details_one_section {
+  display: grid;
+  gap: 8px;
+}
+
+.more_info_noimp {
+  font-size: $font-size-xs;
+  color: $grey-filter-price-border;
+}
+
+.more_info_noimp_text, .info_text {
+  font-size: $font-size-xs;
+}
+
+.tags_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-xxxs;
+
+  .tag {
+    background-color: $grey_bg-settings;
+    border-radius: $elements-radius;
+    padding: $padding-2;
+
+    color: $grey-tag;
+  }
+}
+
+.underline {
+  cursor: pointer;
+  font-size: $font-size-xs;
+  text-decoration: underline;
+}
+
+.auctions_section {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-s;
+}
+
+.nav_section {
+  padding: 0;
+  height: min-content;
+}
+
+.auction_nav {
+  font-size: $font-size-xs !important;
+  font-weight: $weight;
+}
+
+.auction_rates_ul {
+  display: grid;
+  row-gap: $gap-xxxs;
+}
+
+.auction_rates_one {
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content auto max-content;
+  column-gap: $gap-xxxs;
+
+  * {
+    font-size: $font-size-s;
+  }
+}
+
+.auction_rates_one_img {
+  width: $img_button-width-30;
+  height: $img_button-width-30;
+
+  border-radius: $elements-radius;
+
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  gap: $gap-xl;
+
+  button {
+    font-size: $font-size-xs;
+
+    display: flex;
+    gap: $gap-xxxs;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: $width){
+  .root {
+    display: flex;
+    flex-flow: column;
+    gap: $gap-s;
+  }
+
+  .photo_section {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-flow: column;
+    gap: $gap-l1;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .one_photo {
+      width: 100%;
+    }
+  }
+
+}

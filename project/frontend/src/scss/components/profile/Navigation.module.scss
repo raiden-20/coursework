@@ -1,0 +1,38 @@
+@import '@/scss/globals/main_values';
+
+$rout-top: 206px;
+$root-height: 96px;
+
+.root {
+  height: $root-height;
+  padding: $padding-6;
+
+  display: flex;
+
+  li, section {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    font-size: $font-size-l0;
+    font-weight: $weight;
+  }
+
+  .active {
+    border-bottom: $border-base;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .root {
+    padding: $filters-padding-16-6;
+    height: min-content;
+
+    .button {
+      font-size: $font-size-xs;
+    }
+  }
+}

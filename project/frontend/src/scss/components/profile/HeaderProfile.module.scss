@@ -1,0 +1,265 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/color";
+
+$cover-height: 250px;
+
+$change-cover-top: 25px;
+$change-cover-gap: 20px;
+$change-avatar-top: -10px;
+$avatar-top: -110px;
+$button-bell-width: 43px;
+$change-window-bottom: 30px;
+$change-cover-img-width: 200px;
+$delete-img-width: 34px;
+
+
+.page {
+  display: grid;
+  position: relative;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+
+  .cover_section {
+    display: grid;
+    position: relative;
+
+    height: $cover-height;
+
+    z-index: $z-index-low;
+
+    .cover {
+      position: relative;
+      width: 100%;
+      height: $cover-height;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+    }
+
+    .change_cover {
+      padding-right: $padding-24;
+
+      position: absolute;
+      top: $change-cover-top;
+
+      display: grid;
+      justify-self: end;
+      grid-template-columns: min-content min-content;
+      gap: $change-cover-gap;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .profile_data {
+    display: grid;
+    gap: $gap-xs;
+
+    justify-self: center;
+    justify-items: center;
+
+    .avatar_section {
+      display: grid;
+
+      position: relative;
+
+      height: $img-size-big - 94px;
+
+      z-index: $z-index-middle;
+
+      .avatar {
+        position: relative;
+        top: $avatar-top;
+
+        width: $img-size-big;
+        height: $img-size-big;
+
+        border: $border-white;
+        border-radius: $radius-big;
+
+        img {
+          position: relative;
+          right: 1px;
+          bottom: 1px;
+
+          width: 101%;
+          height: 101%;
+
+          object-fit: cover;
+          border-radius: $radius-m;
+        }
+      }
+
+      .change_avatar {
+        position: absolute;
+        top: $change-avatar-top;
+
+        display: grid;
+        justify-self: center;
+        align-self: center;
+
+        grid-template-columns: min-content min-content;
+      }
+
+      .delete {
+        width: 25px;
+        height: 25px;
+
+        position: absolute;
+        top: -60px;
+        left: 85px;
+
+        display: flex;
+        justify-self: end;
+      }
+    }
+
+    .name_section {
+      word-break: break-all;
+
+      .name {
+        height: max-content;
+        font-size: $font-size-xxl;
+        font-weight: $weight;
+      }
+
+      .name_mobile {
+        cursor: auto;
+        display: none;
+      }
+
+    }
+  }
+}
+
+.subscriber_section {
+  height: min-content;
+  width: max-content;
+  display: flex;
+  gap: $gap-s;
+
+  align-items: center;
+
+  img {
+    width: min-content;
+
+    display: grid;
+    justify-self: center;
+    align-self: center;
+
+    .bell_image {
+      width: $bell-width;
+      height: $icon-height;
+    }
+  }
+}
+
+.artist_action_section {
+  display: flex;
+  gap: $gap-s;
+}
+
+.change_data_window {
+  display: grid;
+  justify-self: center;
+  align-self: end;
+
+  position: fixed;
+  bottom: $change-window-bottom;
+
+  z-index: $z-index-up;
+
+  padding: $gap-xl;
+
+  justify-items: center;
+  row-gap: $gap-xl;
+
+  background-color: $white-color;
+  box-shadow: $shadow;
+
+  border-radius: $radius-m;
+
+  .change_data_window_data {
+    display: flex;
+    align-items: center;
+    gap: $gap-xxxxxs;
+  }
+
+  .change_data_window_buttons {
+    display: flex;
+    gap: $gap-s;
+  }
+}
+
+.message {
+  padding-top: 10px;
+  color: $red-color;
+}
+
+@media screen and (orientation: landscape) {
+  .edit_button {
+    display: none;
+  }
+}
+
+@media screen and (orientation: portrait){
+  .hidden_button {
+    display: none;
+  }
+
+  .edit_button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    img {
+      width: 20px;
+    }
+  }
+  .change_data_window {
+    width: 100%;
+    bottom: 0;
+
+    .change_data_window_buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .artist_action_section {
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width: $max-device-width) {
+  .change_cover_img {
+    width: $change-cover-img-width;
+  }
+  .delete_img {
+    width: $delete-img-width;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    .profile_data {
+      .name_section {
+        .name {
+          font-size: $font-size-l;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "@/scss/globals/main_values";
+@import "@/scss/globals/pages";
+
+.root {
+  width: 100%;
+
+  * {
+    font-family: 'Involve', sans-serif;
+  }
+
+  header {
+    font-family: 'New Mexika', sans-serif;
+  }
+}

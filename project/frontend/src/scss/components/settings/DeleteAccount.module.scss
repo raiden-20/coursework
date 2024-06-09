@@ -1,0 +1,57 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+.root {
+  display: grid;
+  gap: $gap-s;
+
+  .header {
+    width: 100%;
+    font-size: $font-size-l0;
+    font-weight: $weight;
+
+    text-align: center;
+  }
+
+  .main_p {
+    font-weight: $weight;
+  }
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer_buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $gap-s;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (orientation: portrait){
+  .root {
+    display: grid;
+    justify-items: start;
+
+    .header {
+      text-align: start;
+      font-size: $font-size-l0;
+    }
+
+    .footer_buttons {
+      display: flex;
+      flex-flow: column-reverse;
+      gap: $gap-s;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+}

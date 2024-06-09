@@ -1,0 +1,247 @@
+@import '@/scss/globals/color';
+@import '@/scss/globals/main_values';
+
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+  font-family: "Involve";
+  src: url('/fonts/involve/Involve-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "New Mexika";
+  src: url('/fonts/new_mexika/behance-644c5296f1fe6.otf') format('opentype');
+}
+
+.title {
+  font-family: 'Fahkwang', sans-serif;
+  font-size: $font-size-l;
+}
+
+.main_button {
+  font-weight: $weight;
+
+  background-color: $black-color;
+  color:$white-color;
+
+  padding: $button-padding;
+
+  font-size: $font-size-s;
+}
+
+.no_main_color {
+  font-weight: $weight;
+}
+
+.cancel_button {
+  background-color: $grey-light;
+
+  padding: $button-padding;
+
+  font-weight: $weight;
+  font-size: $font-size-s;
+}
+
+.second_plan_button {
+  background-color: $grey-date;
+
+  padding: $button-padding;
+
+  font-weight: $weight;
+  font-size: $font-size-s;
+  color: $white-color;
+}
+
+.button_main_page {
+  height: 50px;
+
+  padding: $padding-12-32;
+  border: 1px solid $grey-border-main;
+  border-radius: $radius-48;
+  font-size: $font-size-l0;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  color: $grey-border-main;
+  font-family: "New Mexika", sans-serif;
+}
+
+.button_main_page-2 {
+  height: 70px;
+
+  padding: $button-padding;
+  border: 1px solid $grey-border-main;
+  border-radius: $radius-48;
+  font-size: $font-size-l0;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  color: $grey-border-main;
+  font-family: "New Mexika", sans-serif;
+}
+
+.page_modal_window {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+
+  z-index: $z-index-up;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.bg {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $grey-bg;
+  z-index: $z-index-middle;
+}
+
+.bg2 {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $grey-bg-dark;
+  z-index: $z-index-middle;
+}
+
+.modal_window {
+  width: $root-width-window;
+  padding: $root-padding-window;
+  border-radius: $radius-m;
+
+  display: grid;
+  align-items: center;
+
+  background-color: $white-color;
+  z-index: $z-index-menu;
+}
+
+.message {
+  color: $red-color
+}
+
+.p {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no_elements {
+  text-align: center;
+  color: $grey-date;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: none;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: $grey-date;
+  border-radius: 2px;
+}
+
+.html::-webkit-scrollbar-track {
+  background: none;
+}
+
+.html::-webkit-scrollbar-thumb {
+  background: $grey-date;
+  border-radius: 0;
+}
+
+.scrollbarNone::-webkit-scrollbar {
+  width: 0;
+}
+
+.scrollbarNone::-webkit-scrollbar-track {
+  background: none;
+}
+
+
+@media screen and (orientation: portrait){
+  .modal_window {
+    border-radius: 0;
+    padding: $section-padding-s;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: min-content auto;
+    align-items: start;
+    row-gap: $gap-s;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .button_main_page {
+    height: min-content;
+    padding: $button-padding-9-20;
+
+    img {
+      width: $nav-avatar-size;
+    }
+  }
+
+  .button_main_page-2 {
+    height: $button-height-main-button / 1.1;
+    width: $button-width-main-button / 1.1;
+
+    font-size: $font-size;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button_main_page-2 {
+    height: $button-height-main-button / 1.3;
+    width: $button-width-main-button / 1.2;
+
+    font-size: $font-size-m;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .button_main_page {
+    height: min-content;
+    padding: $button-padding-9-20;
+
+    img {
+      width: $img_button-width-35;
+    }
+  }
+
+  .button_main_page-2 {
+    height: $button-height-main-button / 1.4;
+    width: $button-width-main-button / 1.3;
+
+    font-size: $font-size-s;
+  }
+}

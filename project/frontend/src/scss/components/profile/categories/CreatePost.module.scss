@@ -1,0 +1,129 @@
+@import "@/scss/globals/color";
+@import "@/scss/globals/main_values";
+
+$title-max-height: 84px;
+
+.root {
+  display: grid;
+  gap: $gap-s;
+
+  .cancel {
+    width: min-content;
+    height: min-content;
+
+    display: flex;
+    justify-self: end;
+  }
+
+  .title {
+    width: 100%;
+    min-height: min-content;
+    max-height: $title-max-height;
+
+    padding: 0;
+    border: none;
+
+    font-size: $font-size-l;
+    font-weight: $weight;
+  }
+
+  .textarea {
+    border: none;
+    resize: none;
+    height: $textarea-height-2;
+
+    padding-right: 5px;
+  }
+
+  .buttons_section {
+    display: flex;
+    justify-content: space-between;
+
+    .button_images {
+      display: flex;
+      gap: $gap-xxs;
+      align-items: center;
+
+      padding: 0;
+    }
+  }
+}
+
+.photo_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-xxxs;
+
+  .onePhoto_section {
+    display: grid;
+  }
+}
+.onePhoto {
+  width: $one-photo-size;
+  height: $one-photo-size;
+  object-fit: cover;
+
+  border-radius: $elements-radius;
+}
+
+.delete_button {
+  position: absolute;
+
+  display: grid;
+  justify-self: end;
+
+  padding-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.forbidden {
+  color: $grey-date;
+}
+
+@media screen and (orientation: portrait) {
+  .root {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content auto min-content min-content;
+
+    .cancel {
+      display: none;
+    }
+
+    .textarea {
+      padding: 0;
+      height: 100%;
+    }
+
+    .buttons_section {
+      max-width: 100%;
+      height: min-content;
+      display: grid;
+      grid-template-columns: min-content auto;
+      justify-content: normal;
+      column-gap: $gap-s;
+
+      button {
+        width: 100%;
+      }
+
+      .button_images {
+        width: 40px;
+        height: 40px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        div {
+          display: none;
+        }
+      }
+    }
+  }
+}
